@@ -11,6 +11,8 @@
 		0A4DDC472990FC2700D7BE3C /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DDC462990FC2700D7BE3C /* SearchCollectionViewCell.swift */; };
 		0A4DDC4929910CEA00D7BE3C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DDC4829910CEA00D7BE3C /* NetworkService.swift */; };
 		0A4DDC4B29915E2600D7BE3C /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DDC4A29915E2600D7BE3C /* SearchResponse.swift */; };
+		0A4DDC4E2991892400D7BE3C /* CHTCollectionViewWaterfallLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4DDC4D2991892400D7BE3C /* CHTCollectionViewWaterfallLayout */; };
+		0A4DDC5129918CE600D7BE3C /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DDC5029918CE600D7BE3C /* CompositionalLayout.swift */; };
 		0A70D40B2990D36100F1252E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A70D40A2990D36100F1252E /* AppDelegate.swift */; };
 		0A70D40D2990D36100F1252E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A70D40C2990D36100F1252E /* SceneDelegate.swift */; };
 		0A70D4122990D36100F1252E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A70D4102990D36100F1252E /* Main.storyboard */; };
@@ -24,6 +26,7 @@
 		0A4DDC462990FC2700D7BE3C /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A4DDC4829910CEA00D7BE3C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0A4DDC4A29915E2600D7BE3C /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		0A4DDC5029918CE600D7BE3C /* CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayout.swift; sourceTree = "<group>"; };
 		0A70D4072990D36100F1252E /* TestTaskSearchGoogleImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskSearchGoogleImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A70D40A2990D36100F1252E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A70D40C2990D36100F1252E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4DDC4E2991892400D7BE3C /* CHTCollectionViewWaterfallLayout in Frameworks */,
 				0A4DDC452990E8E400D7BE3C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A4DDC4F29918C9500D7BE3C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A4DDC5029918CE600D7BE3C /* CompositionalLayout.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0A70D3FE2990D36100F1252E = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +85,7 @@
 				0A70D4222990D57800F1252E /* View */,
 				0A70D4212990D57000F1252E /* Extensions */,
 				0A70D4202990D56600F1252E /* Resources */,
+				0A4DDC4F29918C9500D7BE3C /* Helpers */,
 			);
 			path = TestTaskSearchGoogleImage;
 			sourceTree = "<group>";
@@ -163,6 +176,7 @@
 			name = TestTaskSearchGoogleImage;
 			packageProductDependencies = (
 				0A4DDC442990E8E400D7BE3C /* Alamofire */,
+				0A4DDC4D2991892400D7BE3C /* CHTCollectionViewWaterfallLayout */,
 			);
 			productName = TestTaskSearchGoogleImage;
 			productReference = 0A70D4072990D36100F1252E /* TestTaskSearchGoogleImage.app */;
@@ -194,6 +208,7 @@
 			mainGroup = 0A70D3FE2990D36100F1252E;
 			packageReferences = (
 				0A4DDC432990E8E400D7BE3C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0A4DDC4C2991892400D7BE3C /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */,
 			);
 			productRefGroup = 0A70D4082990D36100F1252E /* Products */;
 			projectDirPath = "";
@@ -225,6 +240,7 @@
 				0A4DDC4B29915E2600D7BE3C /* SearchResponse.swift in Sources */,
 				0A70D4292990DB0100F1252E /* SearchViewController.swift in Sources */,
 				0A70D40B2990D36100F1252E /* AppDelegate.swift in Sources */,
+				0A4DDC5129918CE600D7BE3C /* CompositionalLayout.swift in Sources */,
 				0A70D4272990DA2B00F1252E /* SearchViewModel.swift in Sources */,
 				0A70D40D2990D36100F1252E /* SceneDelegate.swift in Sources */,
 				0A4DDC4929910CEA00D7BE3C /* NetworkService.swift in Sources */,
@@ -383,7 +399,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,7 +428,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +474,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		0A4DDC4C2991892400D7BE3C /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -465,6 +489,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A4DDC432990E8E400D7BE3C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		0A4DDC4D2991892400D7BE3C /* CHTCollectionViewWaterfallLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A4DDC4C2991892400D7BE3C /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */;
+			productName = CHTCollectionViewWaterfallLayout;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

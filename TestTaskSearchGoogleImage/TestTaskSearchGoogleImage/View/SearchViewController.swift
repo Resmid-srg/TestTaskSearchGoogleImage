@@ -25,19 +25,33 @@ class SearchViewController: UIViewController {
         self.searchBar.delegate = self
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        
+        collectionView.collectionViewLayout = createLayout()
+    }
+    
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        let item = CompositionalLayout.createItem(width: .fractionalWidth(0.5), height: .fractionalHeight(1), spacing: 1)
+        let fullItem = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(0.5), spacing: 1)
+        let mainItem = CompositionalLayout.createItem(width: .fractionalWidth(1), height: .fractionalHeight(0.5), spacing: 1)
+        
+        let verticalGroup = CompositionalLayout.createGroup(alignment: .vertical, width: .fractionalWidth(0.5), height: .fractionalHeight(1), item: fullItem, count: 2)
+        let horizontalGroup = CompositionalLayout.createGroup(alignment: .horizontal, width: .fractionalWidth(1), height: .fractionalHeight(0.5), items: [item, verticalGroup])
+        let mainGroup = CompositionalLayout.createGroup(alignment: .vertical, width: .fractionalWidth(1), height: .fractionalHeight(0.8), items: [mainItem, horizontalGroup])
+        
+        let section = NSCollectionLayoutSection(group: mainGroup)
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
 }
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(pictures.count)
         return pictures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellImage", for: indexPath) as! SearchCollectionViewCell
         let picture = pictures[indexPath.row]
-        let downloadURL = NSURL(string: picture.thumbnail)
         AF.request(String(picture.thumbnail),method: .get).response { response in
             switch response.result {
             case .success(let responseData):
@@ -76,15 +90,10 @@ extension SearchViewController: UISearchBarDelegate {
                     let objects = try decoder.decode(SearchResponse.self, from: data)
                     self.pictures = objects.imagesResults
                     self.collectionView.reloadData()
-                    print("objects: ", objects)
                 } catch let jsonError {
                     print("Failed to decode JSON", jsonError)
                 }
-                
-                let someString = String(data: data, encoding: .utf8)
             }
-
         })
-
     }
 }
