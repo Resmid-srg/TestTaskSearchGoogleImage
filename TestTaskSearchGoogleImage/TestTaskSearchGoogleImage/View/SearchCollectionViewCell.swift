@@ -11,7 +11,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImageView: UIImageView!
     
-    func setup(image: UIImage) {
-        cellImageView.image = image
+    func setup(imageThumbnailUrl: String) {
+        self.cellImageView.sd_setImage(with: URL(string: imageThumbnailUrl))
     }
 }

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="53D-V4-3Tl">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cdq-kb-oN3">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cdq-kb-oN3">
                                 <rect key="frame" x="0.0" y="159" width="393" height="659"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ymG-BR-F7A">
                                     <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -46,6 +45,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="5P2-Ha-q3v" secondAttribute="trailing" id="nmS-4h-bct"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <size key="customSize" width="120" height="120"/>
                                         <connections>
                                             <outlet property="cellImageView" destination="5P2-Ha-q3v" id="q9a-UT-xwJ"/>
@@ -53,8 +53,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="i1B-zR-usJ">
+                            <searchBar contentMode="redraw" placeholder="Enter a query" translatesAutoresizingMaskIntoConstraints="NO" id="i1B-zR-usJ">
                                 <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <color key="barTintColor" systemColor="secondarySystemBackgroundColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LAw-gw-gT0"/>
@@ -62,7 +63,7 @@
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="i1B-zR-usJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1Ps-Gq-f9e"/>
                             <constraint firstItem="cdq-kb-oN3" firstAttribute="top" secondItem="i1B-zR-usJ" secondAttribute="bottom" id="4x4-JH-rjI"/>
@@ -77,6 +78,7 @@
                     <connections>
                         <outlet property="collectionView" destination="cdq-kb-oN3" id="IvZ-Kx-lEH"/>
                         <outlet property="searchBar" destination="i1B-zR-usJ" id="MnE-hh-OX8"/>
+                        <segue destination="91j-rt-ut1" kind="show" id="iTR-Kf-04O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,10 +103,96 @@
             </objects>
             <point key="canvasLocation" x="626.71755725190837" y="-27.464788732394368"/>
         </scene>
+        <!--Picture details-->
+        <scene sceneID="Gds-do-aev">
+            <objects>
+                <viewController storyboardIdentifier="PictureDetailsViewController" id="91j-rt-ut1" customClass="PictureDetailsViewController" customModule="TestTaskSearchGoogleImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Vc-Ia-PiC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkM-eC-ANc">
+                                <rect key="frame" x="0.0" y="103" width="393" height="605"/>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RY-yC-nC8">
+                                <rect key="frame" x="0.0" y="692" width="393" height="160"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="ZbI-lu-q5P">
+                                        <rect key="frame" x="32" y="48" width="329" height="34.333333333333343"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bs-hE-hqd">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="&lt; Prev"/>
+                                                <connections>
+                                                    <action selector="prevButtonTapped:" destination="91j-rt-ut1" eventType="touchUpInside" id="ArM-Pq-D6y"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-87-ukY">
+                                                <rect key="frame" x="101" y="0.0" width="124.66666666666669" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Open source" subtitle="" titleAlignment="center"/>
+                                                <connections>
+                                                    <action selector="openSourceButtonTapped:" destination="91j-rt-ut1" eventType="touchUpInside" id="4DP-TK-tRa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUO-EV-a3Q">
+                                                <rect key="frame" x="251.66666666666671" y="0.0" width="77.333333333333343" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Next &gt;"/>
+                                                <connections>
+                                                    <action selector="nextButtonTapped:" destination="91j-rt-ut1" eventType="touchUpInside" id="3sh-mj-xMd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="O1h-Vf-K96"/>
+                                    <constraint firstItem="ZbI-lu-q5P" firstAttribute="leading" secondItem="4RY-yC-nC8" secondAttribute="leading" constant="32" id="WgE-zM-c0w"/>
+                                    <constraint firstItem="ZbI-lu-q5P" firstAttribute="top" secondItem="4RY-yC-nC8" secondAttribute="top" constant="48" id="gkv-r9-PnJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZbI-lu-q5P" secondAttribute="trailing" constant="32" id="kdj-rF-CvQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lfH-se-t7r"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jkM-eC-ANc" firstAttribute="top" secondItem="lfH-se-t7r" secondAttribute="top" id="LXA-io-jGw"/>
+                            <constraint firstItem="4RY-yC-nC8" firstAttribute="leading" secondItem="lfH-se-t7r" secondAttribute="leading" id="Syu-Oa-afz"/>
+                            <constraint firstItem="jkM-eC-ANc" firstAttribute="trailing" secondItem="lfH-se-t7r" secondAttribute="trailing" id="To0-ZO-KbF"/>
+                            <constraint firstItem="jkM-eC-ANc" firstAttribute="leading" secondItem="lfH-se-t7r" secondAttribute="leading" id="XAL-Ea-Pd0"/>
+                            <constraint firstAttribute="bottom" secondItem="4RY-yC-nC8" secondAttribute="bottom" id="cZs-rE-9bx"/>
+                            <constraint firstItem="4RY-yC-nC8" firstAttribute="top" secondItem="jkM-eC-ANc" secondAttribute="bottom" constant="-16" id="fQa-MS-Be2"/>
+                            <constraint firstItem="4RY-yC-nC8" firstAttribute="trailing" secondItem="lfH-se-t7r" secondAttribute="trailing" id="qo8-8C-uHy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Picture details" id="qSq-TG-GCz"/>
+                    <connections>
+                        <outlet property="nextButton" destination="gUO-EV-a3Q" id="bZ8-e6-XrQ"/>
+                        <outlet property="openSourceButton" destination="Pka-87-ukY" id="M5I-H5-xvZ"/>
+                        <outlet property="pictureView" destination="jkM-eC-ANc" id="U2a-e8-dRX"/>
+                        <outlet property="prevButton" destination="8Bs-hE-hqd" id="6Vb-AJ-XhW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Bo-KQ-XBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2559.5419847328244" y="-27.464788732394368"/>
+        </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
