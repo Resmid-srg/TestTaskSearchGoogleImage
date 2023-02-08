@@ -50,7 +50,9 @@ class PictureDetailsViewController: UIViewController {
     }
     
     @IBAction func openSourceButtonTapped(_ sender: Any) {
-        
+        let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        webVC.pictureSourceURL = pictures[currentPictureIndex].link
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     //MARK: - Setups

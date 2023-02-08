@@ -181,11 +181,46 @@
                         <outlet property="openSourceButton" destination="Pka-87-ukY" id="M5I-H5-xvZ"/>
                         <outlet property="pictureView" destination="jkM-eC-ANc" id="U2a-e8-dRX"/>
                         <outlet property="prevButton" destination="8Bs-hE-hqd" id="6Vb-AJ-XhW"/>
+                        <segue destination="y5y-jI-HGq" kind="show" identifier="toWebView" id="Ip9-Xs-UXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bo-KQ-XBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2559.5419847328244" y="-27.464788732394368"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="o5a-f1-5hi">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="y5y-jI-HGq" customClass="WebViewController" customModule="TestTaskSearchGoogleImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tag-WU-p3y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrt-fg-AIh">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gu2-je-IC0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gu2-je-IC0" firstAttribute="trailing" secondItem="qrt-fg-AIh" secondAttribute="trailing" id="9km-cR-B74"/>
+                            <constraint firstItem="qrt-fg-AIh" firstAttribute="leading" secondItem="gu2-je-IC0" secondAttribute="leading" id="EOv-80-Kid"/>
+                            <constraint firstItem="qrt-fg-AIh" firstAttribute="top" secondItem="gu2-je-IC0" secondAttribute="top" id="Nem-QG-QQX"/>
+                            <constraint firstItem="gu2-je-IC0" firstAttribute="bottom" secondItem="qrt-fg-AIh" secondAttribute="bottom" id="WtR-Wp-fX7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4WP-Dw-dez"/>
+                    <connections>
+                        <outlet property="webView" destination="qrt-fg-AIh" id="fds-kg-gUr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgu-EC-cN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3575" y="-27"/>
         </scene>
     </scenes>
     <resources>
