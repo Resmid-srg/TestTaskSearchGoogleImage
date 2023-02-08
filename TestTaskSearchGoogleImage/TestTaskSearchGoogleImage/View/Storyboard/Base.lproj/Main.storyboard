@@ -198,6 +198,7 @@
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrt-fg-AIh">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -205,7 +206,7 @@
                             </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gu2-je-IC0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gu2-je-IC0" firstAttribute="trailing" secondItem="qrt-fg-AIh" secondAttribute="trailing" id="9km-cR-B74"/>
                             <constraint firstItem="qrt-fg-AIh" firstAttribute="leading" secondItem="gu2-je-IC0" secondAttribute="leading" id="EOv-80-Kid"/>

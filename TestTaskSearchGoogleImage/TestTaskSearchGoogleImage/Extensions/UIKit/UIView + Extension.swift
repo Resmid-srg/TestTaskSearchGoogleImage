@@ -11,7 +11,7 @@ extension UIView {
     
     //MARK: - activityIndicatorView animation
     
-    func activityStartAnimating() {
+    func activityStartAnimating(color: UIColor = .white) {
         let backgroundView = UIView()
         backgroundView.frame = CGRect.init(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height - 140)
         backgroundView.tag = 475647
@@ -20,6 +20,7 @@ extension UIView {
         activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 100, height: 100))
         activityIndicator.center = self.center
         activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = color
         activityIndicator.style = .large
         activityIndicator.startAnimating()
         

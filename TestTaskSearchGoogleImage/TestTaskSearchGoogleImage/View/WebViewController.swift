@@ -22,7 +22,7 @@ class WebViewController: UIViewController {
         self.webView.navigationDelegate = self
         
         //Setups
-        view.activityStartAnimating()
+        view.activityStartAnimating(color: .systemGroupedBackground)
         
         let urlRequest = URLRequest(url: URL(string: pictureSourceURL)!)
         webView.load(urlRequest)
