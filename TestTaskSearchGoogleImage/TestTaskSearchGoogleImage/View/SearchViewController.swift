@@ -41,6 +41,7 @@ class SearchViewController: UIViewController {
             DispatchQueue.main.async {
                 self?.pictures = pictures
                 self?.collectionView.reloadData()
+                self?.view.activityStopAnimating()
             }
         }
     }
@@ -81,6 +82,7 @@ class SearchViewController: UIViewController {
 //MARK: - UICollectionViewDataSource and UICollectionViewDelegate
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictures.count
     }
@@ -94,7 +96,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pictureDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "PictureDetailsViewController") as! PictureDetailsViewController
-        pictureDetailsVC.currentPicture = indexPath.row
+        pictureDetailsVC.currentPictureIndex = indexPath.row
         pictureDetailsVC.pictures = pictures
         self.navigationController?.pushViewController(pictureDetailsVC, animated: true)
     }
@@ -103,10 +105,12 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 //MARK: - UISearchBarDelegate
 
 extension SearchViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false, block: { [weak self] _ in
             self?.viewModel.userSearching(searchText: searchText)
+            self?.view.activityStartAnimating()
         })
     }
 }

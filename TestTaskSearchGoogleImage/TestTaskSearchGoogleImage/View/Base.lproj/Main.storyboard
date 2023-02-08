@@ -78,7 +78,7 @@
                     <connections>
                         <outlet property="collectionView" destination="cdq-kb-oN3" id="IvZ-Kx-lEH"/>
                         <outlet property="searchBar" destination="i1B-zR-usJ" id="MnE-hh-OX8"/>
-                        <segue destination="91j-rt-ut1" kind="show" id="iTR-Kf-04O"/>
+                        <segue destination="91j-rt-ut1" kind="show" identifier="toPictureDetails" id="iTR-Kf-04O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -112,10 +112,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkM-eC-ANc">
-                                <rect key="frame" x="0.0" y="103" width="393" height="605"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="625"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RY-yC-nC8">
-                                <rect key="frame" x="0.0" y="692" width="393" height="160"/>
+                                <rect key="frame" x="0.0" y="712" width="393" height="140"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="ZbI-lu-q5P">
                                         <rect key="frame" x="32" y="48" width="329" height="34.333333333333343"/>
@@ -149,7 +150,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="O1h-Vf-K96"/>
+                                    <constraint firstAttribute="height" constant="140" id="O1h-Vf-K96"/>
                                     <constraint firstItem="ZbI-lu-q5P" firstAttribute="leading" secondItem="4RY-yC-nC8" secondAttribute="leading" constant="32" id="WgE-zM-c0w"/>
                                     <constraint firstItem="ZbI-lu-q5P" firstAttribute="top" secondItem="4RY-yC-nC8" secondAttribute="top" constant="48" id="gkv-r9-PnJ"/>
                                     <constraint firstAttribute="trailing" secondItem="ZbI-lu-q5P" secondAttribute="trailing" constant="32" id="kdj-rF-CvQ"/>
@@ -190,6 +191,9 @@
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

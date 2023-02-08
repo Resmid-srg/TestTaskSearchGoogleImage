@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3FEC102993A5B50038D7D0 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3FEC0F2993A5B50038D7D0 /* UIView + Extension.swift */; };
 		0A4DDC452990E8E400D7BE3C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4DDC442990E8E400D7BE3C /* Alamofire */; };
 		0A4DDC472990FC2700D7BE3C /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DDC462990FC2700D7BE3C /* SearchCollectionViewCell.swift */; };
 		0A4DDC4929910CEA00D7BE3C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DDC4829910CEA00D7BE3C /* NetworkService.swift */; };
@@ -22,9 +23,11 @@
 		0A70D4172990D36200F1252E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A70D4152990D36200F1252E /* LaunchScreen.storyboard */; };
 		0A70D4272990DA2B00F1252E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A70D4262990DA2B00F1252E /* SearchViewModel.swift */; };
 		0A70D4292990DB0100F1252E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A70D4282990DB0100F1252E /* SearchViewController.swift */; };
+		0AC729EB2992F11E00B35F2B /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC729EA2992F11E00B35F2B /* UIImageView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A3FEC0F2993A5B50038D7D0 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		0A4DDC462990FC2700D7BE3C /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A4DDC4829910CEA00D7BE3C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0A4DDC4A29915E2600D7BE3C /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		0A70D4182990D36200F1252E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A70D4262990DA2B00F1252E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0A70D4282990DB0100F1252E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0AC729EA2992F11E00B35F2B /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 		0A70D4242990D5F200F1252E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				0AC729EA2992F11E00B35F2B /* UIImageView + Extension.swift */,
+				0A3FEC0F2993A5B50038D7D0 /* UIView + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -245,11 +251,13 @@
 			files = (
 				0A4DDC582992BC5700D7BE3C /* PictureDetailsViewController.swift in Sources */,
 				0A4DDC4B29915E2600D7BE3C /* SearchResponse.swift in Sources */,
+				0AC729EB2992F11E00B35F2B /* UIImageView + Extension.swift in Sources */,
 				0A70D4292990DB0100F1252E /* SearchViewController.swift in Sources */,
 				0A70D40B2990D36100F1252E /* AppDelegate.swift in Sources */,
 				0A4DDC5329924BC100D7BE3C /* Dynamic.swift in Sources */,
 				0A4DDC5129918CE600D7BE3C /* CompositionalLayout.swift in Sources */,
 				0A70D4272990DA2B00F1252E /* SearchViewModel.swift in Sources */,
+				0A3FEC102993A5B50038D7D0 /* UIView + Extension.swift in Sources */,
 				0A70D40D2990D36100F1252E /* SceneDelegate.swift in Sources */,
 				0A4DDC4929910CEA00D7BE3C /* NetworkService.swift in Sources */,
 				0A4DDC472990FC2700D7BE3C /* SearchCollectionViewCell.swift in Sources */,
