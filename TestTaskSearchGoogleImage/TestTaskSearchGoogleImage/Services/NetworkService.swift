@@ -17,7 +17,7 @@ class NetworkService {
         let params = ["q": "\(searchText)",
                       "tbm": "isch",
                       "ijn": "0",
-                      //"api_key": "013c18e03ec9c1cf21dd001f68793bca3728b30e8b0d8346681801466642261c"
+                      "api_key": "013c18e03ec9c1cf21dd001f68793bca3728b30e8b0d8346681801466642261c"
         ]
         
         AF.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseData { dataResponse in
