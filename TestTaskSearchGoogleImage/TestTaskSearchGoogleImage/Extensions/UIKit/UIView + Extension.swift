@@ -11,7 +11,7 @@ extension UIView {
     
     //MARK: - activityIndicatorView animation
     
-    func activityStartAnimating(color: UIColor = .white) {
+    func activityStartAnimating(color: UIColor = UIColor(named: "ColorIndicatorLoading")!) {
         let backgroundView = UIView()
         backgroundView.frame = CGRect.init(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height - 140)
         backgroundView.tag = 475647
