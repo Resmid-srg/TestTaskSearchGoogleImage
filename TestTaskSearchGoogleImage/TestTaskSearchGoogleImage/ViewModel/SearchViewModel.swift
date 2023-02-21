@@ -7,9 +7,9 @@
 
 import Foundation
 
-class SearchViewModel {
+final class SearchViewModel {
     
-    let networkService = NetworkService()
+    private let networkService = NetworkService()
     var pictures = Dynamic([Picture]())
     
     //Updating array of image search results
