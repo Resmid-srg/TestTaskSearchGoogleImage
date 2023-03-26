@@ -22,7 +22,7 @@ struct CompositionalLayout {
         item.contentInsets = NSDirectionalEdgeInsets(top: spacing, leading: spacing, bottom: spacing, trailing: spacing)
         return item
     }
-    
+
     static func createGroup(alignment: CompositionalGroupAlignment,
                             width: NSCollectionLayoutDimension,
                             height: NSCollectionLayoutDimension,
@@ -39,7 +39,7 @@ struct CompositionalLayout {
                                                     subitems: items)
         }
     }
-    
+
     static func createGroup(alignment: CompositionalGroupAlignment,
                             width: NSCollectionLayoutDimension,
                             height: NSCollectionLayoutDimension,

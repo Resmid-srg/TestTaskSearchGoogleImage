@@ -8,18 +8,18 @@
 import UIKit
 
 extension UIImageView {
-    
-    //Animation Push from left to right
-    func pushUpTransitionRight(_ duration:CFTimeInterval) {
+
+    // Animation Push from left to right
+    func pushUpTransitionRight(_ duration: CFTimeInterval) {
         let animation = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.type = CATransitionType.push
         animation.duration = duration
         layer.add(animation, forKey: CATransitionType.push.rawValue)
     }
-    
-    //Animation Push from right to left
-    func pushUpTransitionLeft(_ duration:CFTimeInterval) {
+
+    // Animation Push from right to left
+    func pushUpTransitionLeft(_ duration: CFTimeInterval) {
         let animation = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.type = CATransitionType.push

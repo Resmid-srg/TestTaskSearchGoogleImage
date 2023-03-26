@@ -9,28 +9,27 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
-    
+
     var pictureSourceURL: String = ""
-    
+
     @IBOutlet weak var webView: WKWebView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //Delegates
+
+        // Delegates
         self.webView.navigationDelegate = self
-        
-        //Setups
+
+        // Setups
         view.activityStartAnimating(color: .white)
-        
+
         let urlRequest = URLRequest(url: URL(string: pictureSourceURL)!)
         webView.load(urlRequest)
     }
 }
 
 extension WebViewController: WKNavigationDelegate {
-    
+
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         self.view.activityStopAnimating()
     }

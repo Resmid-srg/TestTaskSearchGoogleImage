@@ -8,11 +8,11 @@
 import Foundation
 
 final class SearchViewModel {
-    
+
     private let networkService = NetworkService()
     var pictures = Dynamic([Picture]())
-    
-    //Updating array of image search results
+
+    // Updating array of image search results
     func userSearching(searchText: String) {
         networkService.fetchPictures(searchText: searchText) { [weak self] searchResult in
             self?.pictures.value = searchResult?.imagesResults ?? []

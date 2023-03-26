@@ -8,27 +8,35 @@
 import UIKit
 
 class PictureDetailsViewController: UIViewController {
-    
+
     var currentPictureIndex: Int = -1
     var pictures: [Picture] = []
-    
+
     @IBOutlet weak var pictureView: UIImageView!
-    
+
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var openSourceButton: UIButton!
-            
-    //MARK: - ViewDidLoad
-    
+
+    // MARK: - ViewDidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Setups
+
+        // Setups
         imageSetupsAndAnimationLoading()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+            self.log("text")
+        }
     }
-    
-    //MARK: - Button actions
-    
+
+    private func log(_ message: String) {
+        print(message)
+    }
+
+    // MARK: - Button actions
+
     @IBAction func nextButtonTapped(_ sender: Any) {
         if (currentPictureIndex + 1) < pictures.count {
             currentPictureIndex += 1
@@ -38,7 +46,7 @@ class PictureDetailsViewController: UIViewController {
         self.pictureView.pushUpTransitionLeft(0.2)
         imageSetupsAndAnimationLoading()
     }
-    
+
     @IBAction func prevButtonTapped(_ sender: Any) {
         if (currentPictureIndex - 1) >= 0 {
             currentPictureIndex -= 1
@@ -48,29 +56,33 @@ class PictureDetailsViewController: UIViewController {
         self.pictureView.pushUpTransitionRight(0.2)
         imageSetupsAndAnimationLoading()
     }
-    
+
     @IBAction func openSourceButtonTapped(_ sender: Any) {
-        let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-        webVC.pictureSourceURL = pictures[currentPictureIndex].link
-        self.navigationController?.pushViewController(webVC, animated: true)
+        let webVC = self.storyboard?.instantiateViewController(
+            withIdentifier: "WebViewController") as? WebViewController
+        if let webVC = webVC {
+            webVC.pictureSourceURL = pictures[currentPictureIndex].link
+            self.navigationController?.pushViewController(webVC, animated: true)
+        }
     }
-    
-    //MARK: - Setups
-        
+
+    // MARK: - Setups
+
     private func imageSetupsAndAnimationLoading() {
-        
-        //Аlag to track the display of the image
+
+        // Аlag to track the display of the image
         var flagAnim = false
-        
-        //Delay to start animation
+
+        // Delay to start animation
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             if flagAnim == false {
                 self.view.activityStartAnimating()
             }
         }
-        
-        //Load picture and stop animation loading
-        pictureView.sd_setImage(with: URL(string: pictures[currentPictureIndex].original)) { [weak self] (pic, error, cache, url) in
+
+        // Load picture and stop animation loading
+        pictureView.sd_setImage(with: URL(
+            string: pictures[currentPictureIndex].original)) { [weak self] (pic, error, _, _) in
             if let error = error {
                 print(error.localizedDescription)
                 guard let currentPictureIndex = self?.currentPictureIndex else { return }
@@ -79,8 +91,8 @@ class PictureDetailsViewController: UIViewController {
                 self?.view.activityStopAnimating()
                 flagAnim = true
             }
-            
-            if let _ = pic {
+
+            if pic != nil {
                 self?.view.activityStopAnimating()
                 flagAnim = true
             }
